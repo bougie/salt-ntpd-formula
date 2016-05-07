@@ -1,0 +1,13 @@
+{% load_yaml as lookup %}
+FreeBSD:
+    service: ntpd
+    config_file: /etc/ntp.conf
+Debian:
+    package: ntp
+    service: ntp
+    config_file: /etc/ntp.conf
+{% endload %}
+
+{% load_yaml as rawmap %}
+timezone: Europe/Paris
+{% endload %}
