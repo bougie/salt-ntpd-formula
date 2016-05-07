@@ -1,10 +1,12 @@
 {% load_yaml as lookup %}
 FreeBSD:
-    service: ntpd
+    ntpd_service: ntpd
+    ntpdate_service: ntpdate
     config_file: /etc/ntp.conf
 Debian:
     package: ntp
-    service: ntp
+    ntpd_service: ntp
+    ntpdate_service: ntpdate
     config_file: /etc/ntp.conf
 {% endload %}
 
