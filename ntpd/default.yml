@@ -6,7 +6,6 @@ FreeBSD:
 Debian:
     package: ntp
     ntpd_service: ntp
-    ntpdate_service: ntpdate
     config_file: /etc/ntp.conf
 {% endload %}
 
