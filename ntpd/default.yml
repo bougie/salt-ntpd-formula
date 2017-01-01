@@ -7,6 +7,10 @@ Debian:
     package: ntp
     ntpd_service: ntp
     config_file: /etc/ntp.conf
+Raspbian:
+    package: ntp
+    ntpd_service: ntp
+    config_file: /etc/ntp.conf
 CentOS:
     package: ntp
     ntpd_service: ntpd
