@@ -12,8 +12,17 @@ ntpd_config:
             config: {{rawmap}}
 
 timezone_config:
-    file.copy:
+    file.symlink:
         - name: /etc/localtime
-        - source: /usr/share/zoneinfo/{{rawmap.timezone}}
+        - target: /usr/share/zoneinfo/{{rawmap.timezone}}
         - force: True
+
+{% if salt['grains.has_value']('systemd') %}
+systemd_tz_config:
+    file.managed:
+        - name: /etc/systemd/system.conf.d/tz.conf
+        - source: salt://ntpd/files/tz.conf.j2
+        - template: jinja
+        - makedirs: True
+{% endif %}
 
